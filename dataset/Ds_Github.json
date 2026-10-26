@@ -1,0 +1,30 @@
+{
+	"name": "Ds_Github",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "github_con_Ls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"file_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "Varunvelagandula/Netflix_azure_data_engineering_project/refs/heads/main/Raw_Data_files/@{dataset().file_name}",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
